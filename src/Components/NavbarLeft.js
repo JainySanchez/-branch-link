@@ -7,7 +7,6 @@ import {
   faUsers,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 
 
 function NavbarLeft() {
