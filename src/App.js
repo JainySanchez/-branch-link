@@ -2,6 +2,7 @@ import "./App.css";
 import NavbarTop from "./Components/NavbarTop";
 import NavbarLeft from "./Components/NavbarLeft";
 import NewProject from "./Components/NewProject";
+import MyProjects from "./Components/MyProjects";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                     <BrowserRouter>
                         <Routes>
                             <Route path="/NewProject" element={<NewProject />} />
+                            <Route path="/MyProjects" element={<MyProjects />} />
                         </Routes>
                     </BrowserRouter>
                 </div>
