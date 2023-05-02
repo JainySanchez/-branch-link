@@ -11,7 +11,7 @@ import {
 
 function NavbarLeft() {
     return (
-        <Nav defaultActiveKey="/home" className="flex-column" style={{ "padding-left": "25px", "width": " 400px", "margin": "0" }}>
+        <Nav defaultActiveKey="/home" className="flex-column" style={{ "paddingLeft": "25px", "width": " 400px", "margin": "0" }}>
             <Nav.Link href="/home" style={{ color: "gray" }}>
                 <FontAwesomeIcon icon={faHome} />   Inicio
             </Nav.Link>

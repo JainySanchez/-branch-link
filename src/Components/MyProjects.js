@@ -7,13 +7,14 @@ import Modal from "react-bootstrap/Modal";
 
 function MyProjects(props) {
   const [showNewProject, setNewProject] = useState(false);
-
+  const [projectsData, setProjectsData] = useState([]); // variable de estado para los datos de proyectos
   const handleClick = () => {
     setNewProject(true);
   };
 
   const handleCloseModal = () => {
     setNewProject(false);
+    
   };
 
   const [formData, setFormData] = useState({
@@ -30,16 +31,30 @@ function MyProjects(props) {
       ...formData,
       [name]: value,
     });
+    console.log(formData);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.onSubmit(formData);
+    setProjectsData([...projectsData, formData]); // actualiza la variable de estado con los datos del proyecto agregado
+    resetFormData();
+    handleCloseModal()
+    // props.onSubmit(formData);
   };
+  const resetFormData = () => {
+    setFormData({
+      name: "",
+      description: "",
+      fechaInicial: "",
+      fechaFinal: "",
+      costoEstimado: "",
+    });
+  };
+  console.log(projectsData);
 
   return (
     <div>
-      <Card>
+      <Card style = {{width : "700px"}}>
         <Card.Body>This is some Projects</Card.Body>
         <Button onClick={handleClick} variant="outline-primary">
           Create New Project
@@ -54,122 +69,114 @@ function MyProjects(props) {
           <div>
             <form onSubmit={handleSubmit}>
               <FloatingLabel
-                controlId="floatingInput"
+                
                 label="Nombre"
                 className="mb-3"
               >
-                <Form.Control placeholder="nameProject" />
+                <Form.Control
+                  placeholder="nameProject"
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                />
               </FloatingLabel>
+
               <FloatingLabel
-                controlId="floatingTextarea2"
+               
                 label="Descripción Detallada"
               >
                 <Form.Control
                   as="textarea"
                   placeholder="Leave a comment here"
                   style={{ height: "100px" }}
+                  id="description"
+                  name="description"
+                  value={formData.description}
+                  onChange={handleInputChange}
                 />
               </FloatingLabel>
               <br></br>
               <FloatingLabel
-                controlId="floatingInput"
+                
                 label="Fecha de Inicio"
                 className="mb-3"
               >
-                <Form.Control placeholder="fechaInicio" />
+                <Form.Control
+                  placeholder="fechaInicio"
+                  type="text"
+                  id="fechaInicial"
+                  name="fechaInicial"
+                  value={formData.fechaInicial}
+                  onChange={handleInputChange}
+                />
               </FloatingLabel>
+
               <br></br>
               <FloatingLabel
-                controlId="floatingInput"
+                
                 label="Fecha Final"
                 className="mb-3"
               >
-                <Form.Control placeholder="fechaFinal" />
+                <Form.Control
+                  placeholder="fechaFinal"
+                  type="text"
+                  id="fechaFinal"
+                  name="fechaFinal"
+                  value={formData.fechaFinal}
+                  onChange={handleInputChange}
+                />
               </FloatingLabel>
+
               <br></br>
               <FloatingLabel
-                controlId="floatingInput"
+               
                 label="Costo Estimado"
                 className="mb-3"
               >
-                <Form.Control placeholder="costoEstimado" />
+                <Form.Control
+                  placeholder="costoEstimado"
+                  type="text"
+                  id="costoEstimado"
+                  name="costoEstimado"
+                  value={formData.costoEstimado}
+                  onChange={handleInputChange}
+                />
               </FloatingLabel>
-            
+              <Button variant="secondary" onClick={handleCloseModal}>
+            Close
+          </Button>
+          <Button type="submit" variant="primary" onClick={handleCloseModal}>
+            Save Changes
+          </Button>
             </form>
           </div>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleCloseModal}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
       </Modal>
 
-      <Card>
-        <Card.Header as="h5">Project 127681</Card.Header>
-        <Card.Body>
-          <div>
-            <Card.Title>Backend Developer</Card.Title>
-            <div style={{ display: "flex", "flex-direction": "row" }}>
-              <Card.Img
-                variant="top"
-                src="https://d3ml3b6vywsj0z.cloudfront.net/company_images/5c3b00a0d55ae49f1b76b9ad_images.png"
-                style={{ width: "100px" }}
-              />
-              <Card.Text>
-                With supporting text below as a natural lead-in to additional
-                content.
-              </Card.Text>
-            </div>
-          </div>
-          <Button variant="primary">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      <br></br>
-      <Card>
-        <Card.Header as="h5">Project 127681</Card.Header>
-        <Card.Body>
-          <div>
-            <Card.Title>Backend Developer</Card.Title>
-            <div style={{ display: "flex", "flex-direction": "row" }}>
-              <Card.Img
-                variant="top"
-                src="https://d3ml3b6vywsj0z.cloudfront.net/company_images/5c3b00a0d55ae49f1b76b9ad_images.png"
-                style={{ width: "100px" }}
-              />
-              <Card.Text>
-                With supporting text below as a natural lead-in to additional
-                content.
-              </Card.Text>
-            </div>
-          </div>
-          <Button variant="primary">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      <br></br>
-      <Card>
-        <Card.Header as="h5">Project 127681</Card.Header>
-        <Card.Body>
-          <div>
-            <Card.Title>Backend Developer</Card.Title>
-            <div style={{ display: "flex", "flex-direction": "row" }}>
-              <Card.Img
-                variant="top"
-                src="https://d3ml3b6vywsj0z.cloudfront.net/company_images/5c3b00a0d55ae49f1b76b9ad_images.png"
-                style={{ width: "100px" }}
-              />
-              <Card.Text>
-                With supporting text below as a natural lead-in to additional
-                content.
-              </Card.Text>
-            </div>
-          </div>
-          <Button variant="primary">Go somewhere</Button>
-        </Card.Body>
-      </Card>
+      {projectsData.map((formData, index) => (
+        <div key={index}>
+          <Card style = {{width : "700px"}}>
+            <Card.Header as="h5">{formData.name}</Card.Header>
+            <Card.Body>
+              <div>
+                <Card.Title>{formData.name}</Card.Title>
+                <div style={{ display: "flex", "flex-direction": "row" }}>
+                  <Card.Img
+                    variant="top"
+                    src="https://d3ml3b6vywsj0z.cloudfront.net/company_images/5c3b00a0d55ae49f1b76b9ad_images.png"
+                    style={{ width: "100px" }}
+                  />
+                  <Card.Text>{formData.description}</Card.Text>
+                </div>
+              </div>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+          <br></br>
+        </div>
+      ))}
     </div>
   );
 }
