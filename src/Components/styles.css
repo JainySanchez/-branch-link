@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajustar el tamaño del contenedor según tu diseño */
+}
+.styleImg {
+  width: 150px;
+  height: 150px;
+  display: block; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  margin: auto;
+}
