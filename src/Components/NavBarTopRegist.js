@@ -4,9 +4,16 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import ImgLogo from "./logo-remove.png";
+import { useNavigate } from "react-router-dom";
+
 function NavBarTopRegist() {
+  const navigate = useNavigate();
+
+  const handleSignUpClick = () => {
+    navigate("/");
+  };
   return (
-    <>
+    <div>
       {["sm"].map((expand) => (
         <Navbar key={expand} bg="dark" expand={expand} className="mb-3">
           <Container fluid>
@@ -31,7 +38,11 @@ function NavBarTopRegist() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-5">
-                  <Button variant="secondary" className="btn btn-primary">
+                  <Button
+                    variant="secondary"
+                    className="btn btn-primary"
+                    onClick={handleSignUpClick}
+                  >
                     Login
                   </Button>
                 </Nav>
@@ -40,7 +51,7 @@ function NavBarTopRegist() {
           </Container>
         </Navbar>
       ))}
-    </>
+    </div>
   );
 }
 
