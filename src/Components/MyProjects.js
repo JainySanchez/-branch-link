@@ -146,16 +146,17 @@ function MyProjects(props) {
   return (
     <div>
       <NavbarTop />
-
+    
       <div style={{ display: "flex", flexDirection: "row" }}>
         <div>
           <NavbarLeft />
         </div>
-
         <div>
+        <h2>Crear nuevo proyecto</h2> {/* Título de los proyectos */}
+        <br></br>
           <Card style={{ width: "1000px" }}>
             <Button onClick={handleClick} variant="outline-primary">
-              Crear nuevo Proyecto
+              Ingresar Datos
             </Button>
           </Card>
           <br></br>
@@ -239,6 +240,8 @@ function MyProjects(props) {
           </Modal>
 
           {/* Renderizado de proyectos */}
+          <h2>Mis proyectos</h2> {/* Título de los proyectos */}
+          <br></br>
           {projectsData.map((formData, index) => (
             <div key={index}>
               <Card style={{ width: "700px" }}>
@@ -251,7 +254,24 @@ function MyProjects(props) {
                         src="https://cdn-icons-png.flaticon.com/512/3381/3381007.png"
                         style={{ width: "100px" }}
                       />
-                      <Card.Text>{formData.Descripcion}</Card.Text>
+                      <Card.Text>
+                        {formData.Descripcion}
+                        <br></br>
+                        <span style={{ color: "grey", fontFamily: "Verdana" }}>
+                          Monto Estimado: 
+                        </span>
+                        {formData.CostoEstimado}
+                        <br></br>
+                        <span style={{ color: "grey", fontFamily: "Verdana" }}>
+                          Fecha de Inicio: 
+                        </span>
+                        {new Date(formData.FechaInicio).toLocaleDateString()}
+                        <br></br>
+                        <span style={{ color: "grey", fontFamily: "Verdana" }}>
+                          Fecha de Finalización: 
+                        </span>
+                        {new Date(formData.FechaFinalizacion).toLocaleDateString()}
+                      </Card.Text>
                     </div>
                   </div>
                   <Button variant="primary" onClick={() => handleEdit(formData._id)}>Editar</Button>
