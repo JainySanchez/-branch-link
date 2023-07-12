@@ -4,6 +4,7 @@ import MyProjects from "./Components/MyProjects";
 import DefaultHome from "./Components/DefaultHome";
 import LoginBranch from "./Components/LoginBranch";
 import RegistBranch from "./Components/RegistBranch";
+import Profile from "./Components/Profile";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
           <Route path="/MyProjects" element={<MyProjects />} />
           <Route exact path="/" element={<LoginBranch />} />
           <Route exact path="/Regist" element={<RegistBranch />} />
+          <Route exact path="/Profile" element={<Profile />} />
+
         </Routes>
       </BrowserRouter>
     </div>

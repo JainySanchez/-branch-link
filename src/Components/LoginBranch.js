@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import password from "./password.png";
+import password from "../Images/password.png";
 import "./styles.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";

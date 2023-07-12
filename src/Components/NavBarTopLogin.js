@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import ImgLogo from "./logo-remove.png";
+import ImgLogo from "../Images/logo-remove.png";
 import { useNavigate } from "react-router-dom";
 
 function NavbarTopLogin() {

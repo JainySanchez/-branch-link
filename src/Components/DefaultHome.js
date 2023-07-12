@@ -1,5 +1,5 @@
-import homeImage1 from "./homeother1.png";
-import homeImage2 from "./homeother2.png";
+import homeImage1 from "../Images/homeother1.png";
+import homeImage2 from "../Images/homeother2.png";
 import { Row, Col } from "react-bootstrap";
 import NavbarTop from "./NavbarTop";
 import NavbarLeft from "./NavbarLeft";

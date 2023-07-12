@@ -5,8 +5,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import ImgLogo from './logo-remove.png'
-import DropdownImage from './profile.png';
+import ImgLogo from '../Images/logo-remove.png'
+import DropdownImage from '../Images/profile.png';
 function NavbarTop() {
   return (
     <>
@@ -42,14 +42,14 @@ function NavbarTop() {
                     style={{ backgroundColor: "#212529", color: "#f8f9fa"}}
                   >
                     <div className="dropdown">
-                      <NavDropdown.Item href="#action3">
+                      <NavDropdown.Item href="/Profile">
                         Perfil
                       </NavDropdown.Item>
                       <NavDropdown.Item href="#action4">
                         Ajustes
                       </NavDropdown.Item>
                       <NavDropdown.Divider />
-                      <NavDropdown.Item href="#action5">
+                      <NavDropdown.Item href="/">
                         Salir
                       </NavDropdown.Item>
                     </div>

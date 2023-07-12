@@ -40,7 +40,7 @@ function NavbarLeft() {
         <Nav.Link eventKey="link-3" style={{ color: "gray" }}>
           <FontAwesomeIcon icon={faUsers} /> Tu Red
         </Nav.Link>
-        <Nav.Link eventKey="link-4" style={{ color: "gray" }}>
+        <Nav.Link href="Profile" style={{ color: "gray" }}>
           <FontAwesomeIcon icon={faUser} /> Perfil
         </Nav.Link>
       </Nav>

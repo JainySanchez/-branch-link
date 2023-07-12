@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import adduser from "./add-user.png";
+import adduser from "../Images/add-user.png";
 import "./styles.css";
 import NavbarTopRegist from "./NavBarTopRegist";
 import axios from "axios";
